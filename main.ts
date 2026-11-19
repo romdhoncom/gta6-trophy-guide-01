@@ -1,3 +1,8 @@
+// Leonida Trophy Guide, rebuilt in this session (2026-11-20): a fresh offline
+// tracker for GTA VI's 55 PS5 trophies — checklist, roadmap and cited guides,
+// written for this entry. The program below hands it in: it copies app/ and
+// screenshots/ beside this file to /output and writes /output/dossier.json
+// with the vendored make.fun library (leave vendor/makefun-frontend.ts as is).
 // A working gta6-trophy-guide-01 entry (Node 22, standard library only): the guide is this directory's app/ folder,
 // plain static files a browser opens at app/index.html (ES modules, CSS, no build step), offline: it loads nothing
 // over the network, and its trophy list and guides are app/data/trophies.json. The program hands it in: it copies app/

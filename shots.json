@@ -1,5 +1,1 @@
-[
-  { "file": "1-checklist.jpg", "path": "/", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "2-silver.jpg", "path": "/", "grade": "silver", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "3-bronze.jpg", "path": "/", "grade": "bronze", "scroll": 1400, "viewport": { "width": 1280, "height": 800 } }
-]
+{"shots":[{"file":"1-checklist.jpg","view":"Checklist with the Positive Mental Attitude guide open: missable flag, sources and progress bar visible, kind filters above"},{"file":"2-roadmap.jpg","view":"Roadmap to Platinum tab: the missable-trophy callout and the three stages with their trophies"},{"file":"3-spoilers.jpg","view":"Spoiler setting on: hidden story trophies masked as Hidden trophy, earned ones revealed"},{"file":"4-progress.jpg","view":"Checklist with many trophies earned: progress bar, grade counts, export and import buttons"}]}

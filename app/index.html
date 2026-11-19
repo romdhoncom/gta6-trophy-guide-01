@@ -3,23 +3,85 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTA VI trophy checklist</title>
-<link rel="stylesheet" href="style.css">
+<title>Leonida Trophy Guide — Grand Theft Auto VI</title>
+<meta name="description" content="An offline tracker and guide for all 55 PlayStation 5 trophies of Grand Theft Auto VI: checklist, roadmap to the platinum, missable flags and cited guides.">
+<link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<header>
-  <h1>GTA VI trophy checklist</h1>
-  <p id="progress">0 of 55 earned</p>
+<header class="masthead">
+  <div class="masthead-inner">
+    <p class="kicker">Grand Theft Auto VI · PlayStation 5</p>
+    <h1>Leonida Trophy Guide</h1>
+    <p class="lede">All 55 trophies — tracker, roadmap and cited guides. Works fully offline; your progress stays in this browser.</p>
+    <div class="progress-wrap" id="progress-wrap" aria-live="polite">
+      <div class="progress-numbers"><span id="progress-count">0 / 55</span><span id="progress-pct">0%</span></div>
+      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progress-bar"><span id="progress-fill"></span></div>
+      <p class="progress-grades" id="progress-grades"></p>
+    </div>
+  </div>
 </header>
-<div class="controls">
-  <label>Grade <select id="grade"><option value="all">All</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
-  <button id="export" type="button">Export progress</button>
-  <label class="import">Import progress <input id="import" type="file" accept="application/json"></label>
-</div>
-<table>
-  <thead><tr><th>Earned</th><th>Trophy</th><th>Grade</th><th>How to get it</th></tr></thead>
-  <tbody id="rows"></tbody>
-</table>
-<script type="module" src="app.js"></script>
+
+<main>
+  <section class="controls" aria-label="Tracker controls">
+    <div class="controls-row">
+      <label class="search-label">Search
+        <input type="search" id="search" placeholder="Trophy name or description…" autocomplete="off">
+      </label>
+      <label class="select-label">Grade
+        <select id="grade-filter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label class="select-label">Status
+        <select id="status-filter">
+          <option value="all">All trophies</option>
+          <option value="earned">Earned</option>
+          <option value="remaining">Not yet earned</option>
+        </select>
+      </label>
+    </div>
+    <div class="controls-row">
+      <div class="chips" id="kind-chips" role="group" aria-label="Filter by kind"></div>
+    </div>
+    <div class="controls-row controls-row--toggles">
+      <label class="toggle"><input type="checkbox" id="spoiler-toggle" checked> Hide story spoilers <span class="toggle-note">hidden trophies stay masked until earned</span></label>
+      <div class="data-buttons">
+        <button type="button" id="export-btn">Export progress</button>
+        <button type="button" id="import-btn">Import progress</button>
+        <input type="file" id="import-file" accept="application/json,.json" hidden>
+        <button type="button" id="reset-btn" class="danger">Reset</button>
+      </div>
+    </div>
+    <p class="import-note" id="import-note" role="status"></p>
+  </section>
+
+  <nav class="tabs" aria-label="Guide views">
+    <button type="button" class="tab active" id="tab-checklist" aria-selected="true">Checklist</button>
+    <button type="button" class="tab" id="tab-roadmap" aria-selected="false">Roadmap to Platinum</button>
+  </nav>
+
+  <section id="roadmap" class="roadmap" hidden aria-label="Roadmap to the platinum">
+    <div class="missable-callout" id="missable-callout"></div>
+    <ol class="stages" id="stages"></ol>
+    <p class="roadmap-note">Roadmap built from the official trophy descriptions. Story: 5 chapters, about 60–80 hours. The 100% checklist opens after the story under Progress &gt; Stats &gt; 100% Completion. There is no mission replay and no New Game+, so keep a manual save at the start of each chapter. Cheats disable trophies and saving — keep them off on your trophy run. Sources: PowerPyx trophy guide &amp; roadmap; Exophase / PSNProfiles via Planet GTA 6.</p>
+  </section>
+
+  <section id="checklist" aria-label="Trophy checklist">
+    <p class="list-summary" id="list-summary"></p>
+    <ul class="trophy-list" id="trophy-list"></ul>
+    <p class="empty-state" id="empty-state" hidden>No trophies match these filters. Try clearing the search or choosing another kind.</p>
+  </section>
+</main>
+
+<footer class="colophon">
+  <p>Unofficial fan guide. Not affiliated with Rockstar Games, Sony or PlayStation. No Rockstar artwork, logos or game images are used here; the look is our own. Trophy names, descriptions and grades are shown as PlayStation publishes them (Exophase / PSNProfiles, cross-checked November 2026). Every guide is written for this page and cites its sources beside it. Two guides are marked unconfirmed where the launch guides had no confirmed trigger yet.</p>
+  <p class="colophon-sources">Main sources: PowerPyx — GTA 6 Trophy Guide &amp; Roadmap · Exophase / PSNProfiles via Planet GTA 6 · Sixshore trophy list · CryptoGames 100% checklist · Output Lag trophy list.</p>
+</footer>
+
+<script type="module" src="./main.js"></script>
 </body>
 </html>
